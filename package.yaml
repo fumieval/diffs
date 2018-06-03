@@ -1,0 +1,43 @@
+name:                diffs
+version:             0.1.0.0
+github:              "fumieval/diffs"
+license:             BSD3
+author:              "Fumiaki Kinoshita"
+maintainer:          "fumiexcel@gmail.com"
+copyright:           "Copyright (c) 2018 Fumiaki Kinoshita"
+
+extra-source-files:
+- README.md
+- ChangeLog.md
+
+# Metadata used when publishing your package
+# synopsis:            Short description of your package
+# category:            Web
+
+# To avoid duplicated efforts in documentation and dealing with the
+# complications of embedding Haddock markup inside cabal files, it is
+# common to point users to the README.md file.
+description:         Please see the README on GitHub at <https://github.com/fumieval/diffs#readme>
+
+dependencies:
+- base >= 4.7 && < 5
+- free
+- array
+- free
+- vector
+- prettyprinter
+- containers
+
+library:
+  source-dirs: src
+
+tests:
+  diffs-test:
+    main:                Spec.hs
+    source-dirs:         test
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - diffs
