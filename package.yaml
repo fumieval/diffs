@@ -21,12 +21,12 @@ description:         Please see the README on GitHub at <https://github.com/fumi
 
 dependencies:
 - base >= 4.7 && < 5
-- free
 - array
-- free
 - vector
 - prettyprinter
 - containers
+- deepseq
+- Diff
 
 library:
   source-dirs: src
@@ -41,3 +41,14 @@ tests:
     - -with-rtsopts=-N
     dependencies:
     - diffs
+    - QuickCheck
+
+benchmarks:
+  bench:
+    main: bench.hs
+    source-dirs: benchmarks
+    ghc-options: -O2
+    dependencies:
+    - diffs
+    - gauge
+    - bytestring
